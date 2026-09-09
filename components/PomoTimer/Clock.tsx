@@ -39,8 +39,8 @@ const Clock = ({ settings, lockedSettings, timerState } : { settings: Settings, 
     const progressStyles = buildStyles({
         strokeLinecap: 'round',
         pathTransitionDuration: 0.6,
-        pathColor: timerState.isBreak ? 'rgba(255, 255, 255, 0.65)' : '#ffffff',
-        trailColor: 'rgba(255, 255, 255, 0.08)',
+        pathColor: timerState.isBreak ? '#c4b5fd' : '#ffffff',
+        trailColor: 'rgba(255, 255, 255, 0.14)',
         textColor: '#ffffff',
         textSize: '15px',
     });
@@ -61,7 +61,7 @@ const Clock = ({ settings, lockedSettings, timerState } : { settings: Settings, 
                 styles={progressStyles}
             />
         </div>
-        <span className='text-white/70 text-sm'>
+        <span className='text-white/70 text-sm [text-shadow:0_1px_3px_rgba(0,0,0,0.4)]'>
         {
             timerState.started && (
                 !timerState.isBreak ? 

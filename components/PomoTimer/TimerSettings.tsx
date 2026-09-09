@@ -13,7 +13,7 @@ const TimerSettings = ({ settings, handleUpdate } : { settings: Settings, handle
         {/* Focus */}
         <div className='text-white px-3 py-2 sm:py-1.5 border border-white/10 rounded-2xl shadow-sm bg-gray-500/20 flex justify-center gap-2 items-center'>
             <RiFocusFill className='text-white size-4 cursor-default' />
-            <span className='text-sm text-gray-400 cursor-default'>focus</span>
+            <span className='text-sm text-gray-400 cursor-default [text-shadow:0_1px_3px_rgba(0,0,0,0.4)]'>focus</span>
             <input
                 type='text'
                 inputMode='numeric'
@@ -29,13 +29,13 @@ const TimerSettings = ({ settings, handleUpdate } : { settings: Settings, handle
                     }
                 }}
             />
-            <span className='text-sm text-gray-400 cursor-default'>min</span>
+            <span className='text-sm text-gray-400 cursor-default [text-shadow:0_1px_3px_rgba(0,0,0,0.4)]'>min</span>
         </div>
 
         {/* Break */}
         <div className='text-white px-3 py-2 sm:py-1.5 border border-white/10 rounded-2xl shadow-sm bg-gray-500/20 flex justify-center gap-2 items-center'>
             <FaCoffee className='text-white size-4 cursor-default' />
-            <span className='text-sm text-gray-400 cursor-default'>break</span>
+            <span className='text-sm text-gray-400 cursor-default [text-shadow:0_1px_3px_rgba(0,0,0,0.4)]'>break</span>
             <input
                 type='text'
                 inputMode='numeric'
@@ -51,13 +51,13 @@ const TimerSettings = ({ settings, handleUpdate } : { settings: Settings, handle
                     }
                 }}
             />
-            <span className='text-sm text-gray-400 cursor-default'>min</span>
+            <span className='text-sm text-gray-400 cursor-default [text-shadow:0_1px_3px_rgba(0,0,0,0.4)]'>min</span>
         </div>
 
         {/* Sessions */}
         <div className='text-white px-3 py-2 sm:py-1.5 border border-white/10 rounded-2xl shadow-sm bg-gray-500/20 flex justify-center gap-2 items-center'>
             <FaCoffee className='text-white size-4 cursor-default' />
-            <span className='text-sm text-gray-400 cursor-default'>sessions</span>
+            <span className='text-sm text-gray-400 cursor-default [text-shadow:0_1px_3px_rgba(0,0,0,0.4)]'>sessions</span>
             <input
                 type='text'
                 inputMode='numeric'
