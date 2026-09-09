@@ -5,7 +5,7 @@ import Silk from '@/components/bg/Silk'
 
 const page = () => {
   return (
-    <div className='relative w-full h-full min-h-screen overflow-x-hidden flex flex-col justify-center items-center px-4 py-[min(2.5rem,5vh)]'>
+    <div className='relative w-full min-h-[100dvh] overflow-x-hidden flex flex-col justify-center items-center px-4 py-[min(2.5rem,5vh)]'>
       <div className='absolute inset-0 -z-10'>
         <Silk
           speed={5}
