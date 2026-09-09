@@ -1,12 +1,14 @@
-import React from "react" 
+"use client"
 
-type Settings = {
+import React from "react"
+
+export type Settings = {
     focusTimeMins: number;
     breakTimeMins: number;
     sessionCount: number;
 }
 
-const defaultSettings: Settings = {
+export const defaultSettings: Settings = {
     focusTimeMins: 25,
     breakTimeMins: 5,
     sessionCount: 4
