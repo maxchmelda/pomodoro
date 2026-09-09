@@ -22,7 +22,7 @@ const initialTimerState: TimerState = {
     ended: false,
 
     isBreak: false,
-    untilNext: 0,
+    untilNext: defaultSettings.focusTimeMins * 60,
     currentSession: 1,
 }
 
@@ -64,7 +64,10 @@ export default function useTimer() {
     }
 
     function resetTimer() {
-        setTimerState(initialTimerState);
+        setTimerState({
+            ...initialTimerState,
+            untilNext: lockedSettings.focusTimeMins * 60,
+        });
     }
 
     React.useEffect(() => {
