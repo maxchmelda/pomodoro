@@ -56,8 +56,26 @@ export default function useTimer() {
     }, [timerState.isBreak]);
     
     React.useEffect(() => {
+        if (!timerState.active) {
+            document.title = "Pomodoro Timer";
+            return;
+        }
+
+        const mins = Math.floor(timerState.untilNext / 60);
+        const secs = timerState.untilNext % 60;
+        const time = `${mins < 10 ? "0" : ""}${mins}:${secs < 10 ? "0" : ""}${secs}`;
+        document.title = `${time} · ${timerState.isBreak ? "Break" : "Focus"}`;
+    }, [timerState.active, timerState.untilNext, timerState.isBreak]);
+
+    React.useEffect(() => {
+        return () => {
+            document.title = "Pomodoro Timer";
+        };
+    }, []);
+
+    React.useEffect(() => {
         if (timerState.active == false) return;
-        
+
         const intervalId = setInterval(() => {
             setTimerState((prev) => ({
                 ...prev,
