@@ -28,6 +28,7 @@ export default function useTimer() {
     const { settings, updateSettingsItem } = useSettings();
     const [timerState, setTimerState] = React.useState<TimerState>(initialTimerState);
     const [lockedSettings, setLockedSettings] = React.useState<Settings>(defaultSettings);
+    const [error, setError] = React.useState<string>("");
     
     
     React.useEffect(() => {
@@ -45,6 +46,14 @@ export default function useTimer() {
     
 
     function startTimer() {
+        if (settings.focusTimeMins <= 0) {
+
+        } else if (settings.breakTimeMins <= 0) {
+
+        } else if (settings.sessionCount <= 0) {
+            
+        }
+        
         setTimerState({
             ...initialTimerState,
             active: true
@@ -94,5 +103,5 @@ export default function useTimer() {
 
 
 
-    return { startTimer, pauseTimer, resetTimer, timerState, updateSettingsItem }
+    return { startTimer, pauseTimer, resetTimer, timerState, updateSettingsItem, settings }
 }

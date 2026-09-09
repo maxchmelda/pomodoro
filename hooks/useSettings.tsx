@@ -19,9 +19,8 @@ export default function useSettings() {
 
 
     function updateSettingsItem(key: keyof Settings, val: number) {
-        if (val <= 0) val = defaultSettings[key];
-
         setSettings((prev) => ({...prev, [key]: val}));
+        console.log(JSON.stringify(settings));
     }
 
     return { settings, updateSettingsItem }
