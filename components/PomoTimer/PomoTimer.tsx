@@ -36,7 +36,9 @@ const PomoTimer = () => {
         <ControlButtons start={startTimer} toggle={pauseTimer} reset={resetTimer} skip={skipStage} timerState={timerState} />
 
         {/* Settings (Focus, break, sessions) */}
-        <TimerSettings settings={settings} handleUpdate={updateSettingsItem} />
+        {
+            !timerState.started && <TimerSettings settings={settings} handleUpdate={updateSettingsItem} />
+        }
 
         {/* Success dialog */}
         <SuccessDialog start={startTimer} close={() => setShowSuccess(false)} show={showSuccess} />
