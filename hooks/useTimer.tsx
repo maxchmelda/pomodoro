@@ -92,6 +92,7 @@ export default function useTimer() {
             ...initialTimerState,
             active: true,
             started: true,
+            untilNext: settings.focusTimeMins * 60,
         })
         setLockedSettings(settings);
         sessionSoundRef.current?.play().catch(() => {});
