@@ -30,8 +30,30 @@ export default function useTimer() {
     const { settings, updateSettingsItem } = useSettings();
     const [timerState, setTimerState] = React.useState<TimerState>(initialTimerState);
     const [lockedSettings, setLockedSettings] = React.useState<Settings>(defaultSettings);
-    const [error, setError] = React.useState<string>("");
-    
+
+    const doneSoundRef = React.useRef<HTMLAudioElement | null>(null);
+    const sessionSoundRef = React.useRef<HTMLAudioElement | null>(null);
+    const breakSoundRef = React.useRef<HTMLAudioElement | null>(null);
+
+    React.useEffect(() => {
+        doneSoundRef.current = new Audio('/sounds/timer_finish.mp3');
+        sessionSoundRef.current = new Audio('/sounds/session_start.mp3');
+        breakSoundRef.current = new Audio('/sounds/break_start.mp3');
+    }, []);
+
+    React.useEffect(() => {
+        if (!timerState.ended) return;
+        doneSoundRef.current?.play().catch(() => {});
+    }, [timerState.ended]);
+
+    React.useEffect(() => {
+        if (!timerState.active) return;
+        if (timerState.isBreak) {
+            breakSoundRef.current?.play().catch(() => {});
+        } else {
+            sessionSoundRef.current?.play().catch(() => {});
+        }
+    }, [timerState.isBreak]);
     
     React.useEffect(() => {
         if (timerState.active == false) return;
@@ -54,6 +76,7 @@ export default function useTimer() {
             started: true,
         })
         setLockedSettings(settings);
+        sessionSoundRef.current?.play().catch(() => {});
     }
 
     function pauseTimer() {
