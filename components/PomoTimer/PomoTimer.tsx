@@ -28,7 +28,7 @@ const PomoTimer = () => {
     }, [timerState.ended]);
 
   return (
-    <div className='flex flex-col items-center justify-start gap-6'>
+    <div className='w-full flex flex-col items-center justify-start gap-4 sm:gap-6'>
         {/* Clock */}
         <Clock settings={settings} lockedSettings={lockedSettings} timerState={timerState} />
 

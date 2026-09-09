@@ -9,9 +9,9 @@ const TimerSettings = ({ settings, handleUpdate } : { settings: Settings, handle
   
   
   return (
-    <div className='flex justify-center items-center gap-2'>
+    <div className='w-full flex flex-wrap justify-center items-center gap-2'>
         {/* Focus */}
-        <div className='text-white px-3 py-1.5 border border-white/10 rounded-2xl shadow-sm bg-gray-500/20 flex justify-center gap-2 items-center'>
+        <div className='text-white px-3 py-2 sm:py-1.5 border border-white/10 rounded-2xl shadow-sm bg-gray-500/20 flex justify-center gap-2 items-center'>
             <RiFocusFill className='text-white size-4 cursor-default' />
             <span className='text-sm text-gray-400 cursor-default'>focus</span>
             <input
@@ -33,7 +33,7 @@ const TimerSettings = ({ settings, handleUpdate } : { settings: Settings, handle
         </div>
 
         {/* Break */}
-        <div className='text-white px-3 py-1.5 border border-white/10 rounded-2xl shadow-sm bg-gray-500/20 flex justify-center gap-2 items-center'>
+        <div className='text-white px-3 py-2 sm:py-1.5 border border-white/10 rounded-2xl shadow-sm bg-gray-500/20 flex justify-center gap-2 items-center'>
             <FaCoffee className='text-white size-4 cursor-default' />
             <span className='text-sm text-gray-400 cursor-default'>break</span>
             <input
@@ -55,7 +55,7 @@ const TimerSettings = ({ settings, handleUpdate } : { settings: Settings, handle
         </div>
 
         {/* Sessions */}
-        <div className='text-white px-3 py-1.5 border border-white/10 rounded-2xl shadow-sm bg-gray-500/20 flex justify-center gap-2 items-center'>
+        <div className='text-white px-3 py-2 sm:py-1.5 border border-white/10 rounded-2xl shadow-sm bg-gray-500/20 flex justify-center gap-2 items-center'>
             <FaCoffee className='text-white size-4 cursor-default' />
             <span className='text-sm text-gray-400 cursor-default'>sessions</span>
             <input

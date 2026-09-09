@@ -5,7 +5,7 @@ import Silk from '@/components/bg/Silk'
 
 const page = () => {
   return (
-    <div className='relative w-full h-full min-h-screen overflow-hidden flex flex-col justify-center items-center'>
+    <div className='relative w-full h-full min-h-screen overflow-x-hidden flex flex-col justify-center items-center px-4 py-[min(2.5rem,5vh)]'>
       <div className='absolute inset-0 -z-10'>
         <Silk
           speed={5}
@@ -15,9 +15,9 @@ const page = () => {
           rotation={0}
         />
       </div>
-      <div className='relative flex flex-col justify-center items-center gap-2'>
-        <h1 className='text-white text-6xl font-bold'>Pomodoro Timer</h1>
-        <p className='text-white/60 text-lg'>Work in focused sprints, rest with intention.</p>
+      <div className='relative w-full max-w-lg flex flex-col justify-center items-center gap-2'>
+        <h1 className='text-white text-[min(8vw,9vh,3.75rem)] leading-tight font-bold text-center'>Pomodoro Timer</h1>
+        <p className='text-white/60 text-[min(4vw,4.5vh,1.125rem)] text-center'>Work in focused sprints, rest with intention.</p>
         <PomoTimer />
       </div>
     </div>

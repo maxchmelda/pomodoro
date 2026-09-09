@@ -50,8 +50,8 @@ const Clock = ({ settings, lockedSettings, timerState } : { settings: Settings, 
     };
 
   return (
-    <div className='mt-6 flex flex-col justify center items-center gap-4'>
-        <div className='w-72 h-72 sm:w-80 sm:h-80 rounded-full bg-gray-500/10 border border-white/10 shadow-sm p-6'>
+    <div className='mt-4 sm:mt-6 flex flex-col justify-center items-center gap-3 sm:gap-4'>
+        <div className='w-[min(14rem,42vh)] h-[min(14rem,42vh)] sm:w-[min(18rem,42vh)] sm:h-[min(18rem,42vh)] md:w-[min(20rem,42vh)] md:h-[min(20rem,42vh)] rounded-full bg-gray-500/10 border border-white/10 shadow-sm p-4 sm:p-6'>
             <CircularProgressbar
                 className='w-full h-full'
                 value={getCurrentValue()}
