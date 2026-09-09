@@ -6,7 +6,7 @@ import React from 'react'
 import TimerSettings from './TimerSettings';
 import ControlButtons from './ControlButtons';
 import Clock from './Clock';
-
+import SuccessDialog from './SuccessDialog';
 
 
 const PomoTimer = () => {
@@ -21,6 +21,12 @@ const PomoTimer = () => {
         skipStage
     } = useTimer();
 
+    const [showSuccess, setShowSuccess] = React.useState(false);
+
+    React.useEffect(() => {
+        if (timerState.ended) setShowSuccess(true);
+    }, [timerState.ended]);
+
   return (
     <div className='flex flex-col items-center justify-start gap-6'>
         {/* Clock */}
@@ -31,6 +37,9 @@ const PomoTimer = () => {
 
         {/* Settings (Focus, break, sessions) */}
         <TimerSettings settings={settings} handleUpdate={updateSettingsItem} />
+
+        {/* Success dialog */}
+        <SuccessDialog start={startTimer} close={() => setShowSuccess(false)} show={showSuccess} />
     </div>
   )
 }
