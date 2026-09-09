@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+.numericBaldInput::-webkit-outer-spin-button,
+.numericBaldInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.numericBaldInput {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
