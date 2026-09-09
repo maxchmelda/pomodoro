@@ -2,7 +2,7 @@
 
 A Pomodoro-technique timer built with Next.js, featuring configurable focus/break sessions, sound cues, an animated 3D silk background, and a circular progress clock.
 
-![Pomodoro Timer screenshot](public/screenshot.png)
+![Pomodoro Timer screenshot](public/screenshot.jpg)
 
 ## Features
 
