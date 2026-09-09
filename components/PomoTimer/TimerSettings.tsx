@@ -73,7 +73,6 @@ const TimerSettings = ({ settings, handleUpdate } : { settings: Settings, handle
                     }
                 }}
             />
-            <span className='text-sm text-gray-400 cursor-default'>min</span>
         </div>
     </div>
   )

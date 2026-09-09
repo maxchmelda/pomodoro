@@ -4,7 +4,8 @@ import React from "react";
 import type { Settings } from "@/hooks/useSettings";
 import useSettings, { defaultSettings } from "@/hooks/useSettings";
 
-type TimerState = {
+export type TimerState = {
+    started: boolean;
     active: boolean;
     accumulatedSecs: number;
     ended: boolean;
@@ -15,6 +16,7 @@ type TimerState = {
 }
 
 const initialTimerState: TimerState = {
+    started: false,
     active: false,
     accumulatedSecs: 0,
     ended: false,
@@ -46,17 +48,10 @@ export default function useTimer() {
     
 
     function startTimer() {
-        if (settings.focusTimeMins <= 0) {
-
-        } else if (settings.breakTimeMins <= 0) {
-
-        } else if (settings.sessionCount <= 0) {
-            
-        }
-        
         setTimerState({
             ...initialTimerState,
-            active: true
+            active: true,
+            started: true,
         })
         setLockedSettings(settings);
     }
@@ -103,5 +98,5 @@ export default function useTimer() {
 
 
 
-    return { startTimer, pauseTimer, resetTimer, timerState, updateSettingsItem, settings }
+    return { startTimer, pauseTimer, resetTimer, timerState, updateSettingsItem, settings, lockedSettings }
 }
