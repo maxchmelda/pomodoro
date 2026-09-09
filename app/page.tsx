@@ -16,7 +16,7 @@ const page = () => {
         />
       </div>
       <div className='relative flex flex-col justify-center items-center gap-2'>
-        <h1 className='text-white text-6xl font-black'>Pomodoro Timer</h1>
+        <h1 className='text-white text-6xl font-bold'>Pomodoro Timer</h1>
         <PomoTimer />
       </div>
     </div>
