@@ -61,7 +61,16 @@ const Clock = ({ settings, lockedSettings, timerState } : { settings: Settings, 
                 styles={progressStyles}
             />
         </div>
-        <span className='text-white/70 text-sm'>{`Session ${timerState.currentSession} of ${lockedSettings.sessionCount}`}</span>
+        <span className='text-white/70 text-sm'>
+        {
+            timerState.started && (
+                !timerState.isBreak ? 
+                    `Session ${timerState.currentSession} of ${lockedSettings.sessionCount}`
+                :
+                    "Take a break"
+            )
+        }
+        </span>
     </div>
   )
 }

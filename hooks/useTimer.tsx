@@ -70,6 +70,13 @@ export default function useTimer() {
         });
     }
 
+    function skipStage() {
+        setTimerState((prev) => ({
+            ...prev,
+            accumulatedSecs: prev.accumulatedSecs + prev.untilNext
+        }));
+    }
+
     React.useEffect(() => {
 
         // check if ended
@@ -93,6 +100,7 @@ export default function useTimer() {
             ...prev,
             ended,
             active: ended ? false : prev.active,
+            started: ended ? false : prev.started,
             isBreak,
             untilNext,
             currentSession
@@ -101,5 +109,5 @@ export default function useTimer() {
 
 
 
-    return { startTimer, pauseTimer, resetTimer, timerState, updateSettingsItem, settings, lockedSettings }
+    return { startTimer, pauseTimer, resetTimer, timerState, updateSettingsItem, settings, lockedSettings, skipStage }
 }

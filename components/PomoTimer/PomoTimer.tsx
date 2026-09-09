@@ -17,7 +17,8 @@ const PomoTimer = () => {
         timerState,
         settings,
         updateSettingsItem,
-        lockedSettings
+        lockedSettings,
+        skipStage
     } = useTimer();
 
   return (
@@ -26,7 +27,7 @@ const PomoTimer = () => {
         <Clock settings={settings} lockedSettings={lockedSettings} timerState={timerState} />
 
         {/* Start / Stop / Reset / Skip */}
-        <ControlButtons start={startTimer} toggle={pauseTimer} reset={resetTimer} timerState={timerState} />
+        <ControlButtons start={startTimer} toggle={pauseTimer} reset={resetTimer} skip={skipStage} timerState={timerState} />
 
         {/* Settings (Focus, break, sessions) */}
         <TimerSettings settings={settings} handleUpdate={updateSettingsItem} />
