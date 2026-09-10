@@ -1,10 +1,11 @@
 import { defaultSettings, Settings } from '@/hooks/useSettings'
 import React from 'react'
 import { FaCoffee } from 'react-icons/fa'
+import { FaArrowRotateLeft, FaArrowRotateRight } from 'react-icons/fa6'
 import { RiFocusFill, RiFocusLine } from 'react-icons/ri'
 import { TiCoffee } from 'react-icons/ti'
 
-const TimerSettings = ({ settings, handleUpdate } : { settings: Settings, handleUpdate: (key: keyof Settings, val: number) => void }) => {
+const TimerSettings = ({ settings, handleUpdate, resetSettings } : { settings: Settings, handleUpdate: (key: keyof Settings, val: number) => void, resetSettings: () => void }) => {
   
   
   
@@ -74,6 +75,13 @@ const TimerSettings = ({ settings, handleUpdate } : { settings: Settings, handle
                 }}
             />
         </div>
+
+        <button
+            className={`hover:scale-[115%] cursor-pointer transition-all duration-100 ${JSON.stringify(settings) == JSON.stringify(defaultSettings) && "hidden"} animate-in fade-in zoom-in-50 duration-200`}
+            onClick={() => resetSettings()}
+        >
+            <FaArrowRotateLeft className='text-white/50' size={16}/>
+        </button>
     </div>
   )
 }

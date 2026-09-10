@@ -18,7 +18,8 @@ const PomoTimer = () => {
         settings,
         updateSettingsItem,
         lockedSettings,
-        skipStage
+        skipStage,
+        resetSettings
     } = useTimer();
 
     const [showSuccess, setShowSuccess] = React.useState(false);
@@ -37,7 +38,7 @@ const PomoTimer = () => {
 
         {/* Settings (Focus, break, sessions) */}
         {
-            !timerState.started && <TimerSettings settings={settings} handleUpdate={updateSettingsItem} />
+            !timerState.started && <TimerSettings settings={settings} handleUpdate={updateSettingsItem} resetSettings={resetSettings} />
         }
 
         {/* Success dialog */}

@@ -23,6 +23,10 @@ export default function useSettings() {
         setSettings((prev) => ({...prev, [key]: val}));
     }
 
+    function resetSettings() {
+        setSettings(defaultSettings);
+    }
+
     function getFromStorage () {
         const raw = localStorage.getItem('pomo-settings');
         if (!raw) return defaultSettings;
@@ -35,6 +39,7 @@ export default function useSettings() {
         localStorage.setItem('pomo-settings', JSON.stringify(settings));
     }
 
+
     React.useEffect(() => {
         setSettings(getFromStorage());
         setIsLoaded(true);
@@ -45,5 +50,5 @@ export default function useSettings() {
         saveToStorage();
     }, [settings])
 
-    return { settings, updateSettingsItem }
+    return { settings, updateSettingsItem, resetSettings }
 }

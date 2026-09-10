@@ -27,7 +27,7 @@ const initialTimerState: TimerState = {
 }
 
 export default function useTimer() {
-    const { settings, updateSettingsItem } = useSettings();
+    const { settings, updateSettingsItem, resetSettings } = useSettings();
     const [timerState, setTimerState] = React.useState<TimerState>(initialTimerState);
     const [lockedSettings, setLockedSettings] = React.useState<Settings>(defaultSettings);
 
@@ -151,5 +151,5 @@ export default function useTimer() {
 
 
 
-    return { startTimer, pauseTimer, resetTimer, timerState, updateSettingsItem, settings, lockedSettings, skipStage }
+    return { startTimer, pauseTimer, resetTimer, timerState, updateSettingsItem, settings, lockedSettings, skipStage, resetSettings }
 }
